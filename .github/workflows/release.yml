@@ -13,8 +13,8 @@ jobs:
     uses: flighttrackr/workflows/.github/workflows/release-with-upstream.yml@main
     with:
       hub_repo: flighttrackr
-      hub_image: TPL_PROJECT
+      hub_image: adsb2influx
       image_authors: Dennis Neufeld <git@dneufeld.net>
-      image_title: TPL_PROJECT
-      image_description: Dockerized TPL_PROJECT
+      image_title: adsb2influx
+      image_description: Dockerized adsb2influx
       image_licenses: MIT

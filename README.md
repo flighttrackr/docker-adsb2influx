@@ -1,8 +1,8 @@
-# TPL_PROJECT
+# adsb2influx
 
-[![Release](https://github.com/flighttrackr/docker-TPL_PROJECT/actions/workflows/release.yml/badge.svg)](https://github.com/flighttrackr/docker-TPL_PROJECT/actions/workflows/release.yml)
+[![Release](https://github.com/flighttrackr/docker-adsb2influx/actions/workflows/release.yml/badge.svg)](https://github.com/flighttrackr/docker-adsb2influx/actions/workflows/release.yml)
 
-This project makes [TPL_AUTHOR]'s [TPL_PROJECT] software available as a Docker image.
+This project makes a fork from [slintak]'s [adsb2influx] software available as a Docker image.
 
 Due to the API limitations of Docker Hub, we use GitHub as container image registry.
 
@@ -23,16 +23,23 @@ We have other Flighttracking projects, check our [GitHub profile].
 ```shell
 docker run \
   -it --rm \
-  ghcr.io/flighttrackr/TPL_PROJECT:latest
+  ghcr.io/flighttrackr/adsb2influx:latest
 ```
 
 ## Environment variables
 
 | Environment variable | Default | Description |
 | :- | :- | :- |
-| | | |
+| SBS_HOST | localhost | SBS BaseStation Host |
+| SBS_PORT | 30003 | SBS BaseStation Port |
+| INFLUX_URL | | InfluxDB URL |
+| INFLUX_TOKEN | | InfluxDB API token |
+| INFLUX_ORG | | InfluxDB organisation |
+| INFLUX_BUCKET | adsb | InfluxDB bucket |
+| INFLUX_MEASUREMENT | messages | InfluxDB measurement |
+| SEND_INTERVAL | 60 | Data send interval (sec) |
 
 
-[TPL_AUTHOR]: https://github.com/TPL_AUTHOR
-[TPL_PROJECT]: https://github.com/TPL_AUTHOR/TPL_PROJECT
+[slintak]: https://github.com/slintak
+[adsb2influx]: https://github.com/slintak/adsb2influx
 [GitHub profile]: https://github.com/flighttrackr
