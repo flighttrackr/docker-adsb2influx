@@ -1,5 +1,5 @@
 # Base
-FROM alpine:3.20.2 AS base
+FROM alpine:3.20.3 AS base
 
 # Packages
 RUN apk add --no-cache \
