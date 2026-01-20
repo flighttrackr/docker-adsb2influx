@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # Imports
+import os
 import signal
 import argparse
 import logging
@@ -391,14 +392,15 @@ def main():
         '--health-enable',
         dest = 'health_enable',
         action = 'store_true',
-        help = 'enable HTTP health endpoint for Docker (default: disabled)'
+        default = os.environ.get('HEALTH_ENABLE', 'false').lower() == 'true',
+        help = 'enable HTTP health endpoint for Docker (default: disabled, or enabled via HEALTH_ENABLE env)'
     )
     parser.add_argument(
         '--health-port',
         dest = 'health_port',
         type = int,
-        default = 8080,
-        help = 'Port for HTTP health endpoint (default: 8080)'
+        default = int(os.environ.get('HEALTH_PORT', 8080)),
+        help = 'Port for HTTP health endpoint (default: 8080, or HEALTH_PORT env)'
     )
 
     args = parser.parse_args()
